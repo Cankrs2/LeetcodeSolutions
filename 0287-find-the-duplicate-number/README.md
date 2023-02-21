@@ -7,7 +7,7 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> nums = [1,3,4,2,2]
+<pre><strong>Input:</strong> nums = [<wtf>1,3,4,2,2</wtf>]
 <strong>Output:</strong> 2
 </pre>
 
