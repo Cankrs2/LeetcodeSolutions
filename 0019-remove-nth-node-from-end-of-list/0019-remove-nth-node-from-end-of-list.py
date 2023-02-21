@@ -17,5 +17,3 @@ class Solution:
             return head.next
         slow.next = slow.next.next
         return head
-
-        
