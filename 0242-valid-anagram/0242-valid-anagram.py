@@ -1,13 +1,10 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        dict = []
         if len(s) != len(t):
             return False
+        dict_s = {}
+        dict_t = {}
         for i in range(len(s)):
-            dict.append(s[i])
-        for j in range(len(t)):
-            if t[j] in dict:
-                dict.remove(t[j])
-            else:
-                return False
-        return True
+            dict_s[s[i]] = dict_s.get(s[i],0) + 1
+            dict_t[t[i]] = dict_t.get(t[i],0) + 1
+        return dict_s == dict_t
