@@ -12,9 +12,8 @@ class Solution:
     
     def helper(self,root):
         if root == None: return
-        if root.left != None or root.right != None:
-            temp = root.right
-            root.right = root.left
-            root.left = temp
+        temp = root.right
+        root.right = root.left
+        root.left = temp
         self.helper(root.left)
         self.helper(root.right)
