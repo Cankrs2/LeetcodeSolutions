@@ -1,20 +1,18 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        for i in range(len(s)):
-            if s[i] != ")" and s[i] != "]" and s[i] != "}":
-                stack.append(s[i])
+        opens = []
+        
+        for i in s:
+            if i == "(" or i == "[" or i == "{":
+                opens.append(i)
             else:
-                if stack != []:
-                    x = stack.pop()
-                    if x =="{" and s[i] != "}":
+                if len(opens) != 0:
+                    a = opens.pop()
+                    if a == "(" and i != ")" or a == "[" and i != "]" or a == "{" and i != "}":
                         return False
-                    if x =="[" and s[i] != "]":
-                        return False
-                    if x =="(" and s[i] != ")":
-                        return False
-                else:
+                else: 
                     return False
-        if stack != []:
+        if len(opens) != 0:
             return False
+        
         return True
